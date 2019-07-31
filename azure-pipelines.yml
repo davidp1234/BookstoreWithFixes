@@ -12,7 +12,15 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: Security static source code analysis@88
+  inputs:
+    projectName: 'Project (Azure DevOps) 1'
+    preset: 'Checkmarx Default'
+    fullTeamName: 'CxServer'
+    incScan: true
+    high: '1'
+    medium: '10'
+    low: '20'
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
